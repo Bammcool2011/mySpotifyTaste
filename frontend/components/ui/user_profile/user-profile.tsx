@@ -41,7 +41,7 @@ export default function UserProfile({
                         </Group>
                     </Card>
 
-                    <div className="grid grid-cols-1">
+                    <div className="flex flex-col ">
                         {songs.map((song) => (
                             <SongCard
                                 key={song.id || song.name}

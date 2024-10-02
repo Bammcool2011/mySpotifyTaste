@@ -1,4 +1,4 @@
-import { Card, Text } from '@mantine/core';
+import { Card, Text, Image, Group, Divider } from '@mantine/core';
 
 interface SongCardProps {
     title: string;
@@ -7,10 +7,28 @@ interface SongCardProps {
 
 const SongCard: React.FC<SongCardProps> = ({ title, artist }) => {
     return (
-        <Card shadow="sm" padding="lg" className="flex flex-col">
-            <Text w={500}>{title}</Text>
-            <Text size="sm" color="dimmed">{artist}</Text>
-        </Card>
+        <div>
+            <Card shadow="sm" padding="lg" className="flex flex-row">
+                <Group gap="xs">
+                    <Image
+                        radius="md"
+                        h={60}
+                        w={60}
+                        src="/assets/images/myspotifytaste.png"
+                    >
+                    </Image>
+                    <Group gap={2} className="flex flex-col items-start">
+                        <Text
+                            size="lg"
+                            fw={600}>{title}</Text>
+
+                        <Text
+                            size="sm">{artist}</Text>
+                    </Group>
+                </Group>
+            </Card>
+            <Divider size="sm" w="95%" mx="auto" />
+        </div>
     );
 };
 
